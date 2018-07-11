@@ -1,17 +1,30 @@
 package institution;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import person.Student;
 
 public class University {
+	
+	private String name;
+	private List<Student> students = new ArrayList<>();
+	
+	
     public University(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
     }
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
-    }
+//    public void setStudent(Student student) {
+//    	  //TODO: Implementation is needed
+//    }
 
     public void addStudent(Student student) {
-        //TODO: Implementation is needed
+        students.add(student);
+        student.setUniversity(this);
+    }
+    
+    public List<Student> getStudents(){
+    	return students;
     }
 }

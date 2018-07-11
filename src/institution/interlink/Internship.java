@@ -1,18 +1,41 @@
 package institution.interlink;
 
+import institution.University;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import person.Student;
 
 public class Internship {
+	
+	private String name;
+	private List<Student> students = new ArrayList<>();
+	
     public Internship(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
     }
 
     public void setStudent(Student student) {
-        //TODO: Implementation is needed
+        if(student.getKnowledge().getLevel() >= arithmeticMean(student.getUniversity()))
+        	students.add(student);
+    }
+    
+    private int arithmeticMean(University university){
+    	List<Student> list = university.getStudents();
+    	int sum = 0;
+    	for(Student person : list){
+    		sum += person.getKnowledge().getLevel();
+    	}
+    	return sum/list.size();
     }
 
     public String getStudents() {
-        //TODO: Implementation is needed
-        return "Andrew Maslenko\nJulia Veselkina\n";
+    	if(students.isEmpty()) return null;
+    	String persons = "";
+    	for(Student person : students){
+    		persons += person.getName() + "\n";
+    	}
+        return persons;
     }
 }
