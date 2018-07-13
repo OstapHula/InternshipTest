@@ -3,21 +3,17 @@ package main;
 import institution.University;
 import institution.interlink.Internship;
 import person.Student;
-import person.consciousness.Knowledge;
 
 public class Application {
     public static void main(String[] args) {
         University university = new University("CH.U.I.");
-        university.addStudent(new Student("Andrew Kostenko", new Knowledge(90)));
-        university.addStudent(new Student("Julia Veselkina", new Knowledge(70)));
-        university.addStudent(new Student("Maria Perechrest", new Knowledge(50)));
+        university.addStudent(new Student("Andrew Kostenko", 90));
+        university.addStudent(new Student("Julia Veselkina", 60));
+        university.addStudent(new Student("Maria Perechrest", 50));
 
         Internship internship = new Internship("Interlink");
         
-        for(Student student : university.getStudents()){
-        	internship.setStudent(student);
-        }
-       
+        internship.setStudents(university.getStudents());
         System.out.println("List of internship's students:");
         System.out.println(internship.getStudents());
     }

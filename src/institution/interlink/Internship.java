@@ -38,4 +38,10 @@ public class Internship {
     	}
         return persons;
     }
+    
+    public void setStudents(List<Student> students) {
+		for (Student student : students) {
+			this.setStudent(student);
+		}
+	}
 }

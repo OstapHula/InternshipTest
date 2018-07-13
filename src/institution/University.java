@@ -15,9 +15,15 @@ public class University {
         this.name = name;
     }
 
-//    public void setStudent(Student student) {
-//    	  //TODO: Implementation is needed
-//    }
+    public void setStudent(Student[] arrayOfStudents) {
+    	for(Student student : arrayOfStudents){
+    	  students.add(student);
+    	}
+    }
+    
+    public void setStudent(List<Student> listOfStudents){
+    	students.addAll(listOfStudents);
+    }
 
     public void addStudent(Student student) {
         students.add(student);

@@ -9,9 +9,9 @@ public class Student {
 	private Knowledge knowledge;
 	private University university;
 	
-	public Student(String name, Knowledge knowledge) {
+	public Student(String name, int knowledge) {
         this.name = name;
-        this.knowledge = knowledge;
+        this.knowledge = new Knowledge(knowledge);
     }
 		
     public University getUniversity() {
