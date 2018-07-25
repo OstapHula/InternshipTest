@@ -14,15 +14,23 @@ public class University {
     public University(String name) {
         this.name = name;
     }
+    
+    public University(){
+    	
+    }
 
-    public void setStudent(Student[] arrayOfStudents) {
+    public void setStudents(Student[] arrayOfStudents) {
     	for(Student student : arrayOfStudents){
     	  students.add(student);
     	}
     }
     
-    public void setStudent(List<Student> listOfStudents){
+    public void setStudents(List<Student> listOfStudents){
     	students.addAll(listOfStudents);
+    }
+    
+    public void setName(String name){
+    	this.name = name;
     }
 
     public void addStudent(Student student) {
