@@ -22,10 +22,14 @@ public class University {
     public void setStudents(Student[] arrayOfStudents) {
     	for(Student student : arrayOfStudents){
     	  students.add(student);
+    	  student.setUniversity(this);
     	}
     }
     
     public void setStudents(List<Student> listOfStudents){
+    	for(Student student : listOfStudents){
+    		student.setUniversity(this);
+    	}
     	students.addAll(listOfStudents);
     }
     

@@ -20,7 +20,7 @@ public class Student {
 	     this.knowledge = new Knowledge(knowlege);
 	}
 		
-    public Student() {
+	public Student() {
     	
 	}
 
@@ -46,6 +46,12 @@ public class Student {
 
 	public void setUniversity(University university) {
 		this.university = university;
+	}
+
+    @Override
+	public String toString() {
+		return "Student [name=" + name + ", knowledge=" + knowledge.getLevel()
+				+ ", university=" + university + "]";
 	}
 
 }
